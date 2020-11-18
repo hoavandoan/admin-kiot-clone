@@ -3,13 +3,16 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@fullhuman/postcss-purgecss": "^3.0.0",
     "@progress/kendo-licensing": "^1.1.0",
+    "@progress/kendo-react-buttons": "^4.1.0",
     "@progress/kendo-react-dialogs": "^4.1.0",
     "@progress/kendo-react-grid": "^4.1.0",
     "@progress/kendo-theme-default": "^4.26.0",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
+    "eslint-plugin-react": "^7.21.5",
     "node-sass": "^5.0.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
@@ -17,12 +20,16 @@
     "web-vitals": "^0.2.4"
   },
   "scripts": {
+    "build:tailwind": "tailwindcss build src/styles/tailwind.css -o src/styles/index.css",
+    "prestart": "npm run build:tailwind",
+    "prebuild": "npm run build:tailwind",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "lint": "eslint './src/**/*.{js,jsx}'",
-    "lint:fix": "eslint './src/**/*.{js,jsx}' --fix"
+    "lint:fix": "eslint . --fix",
+    "fix-js": "eslint-auto-fix"
   },
   "eslintConfig": {
     "extends": [
@@ -43,8 +50,12 @@
     ]
   },
   "devDependencies": {
+    "autoprefixer": "9.8.6",
+    "eslint-auto-fix": "^1.0.3",
     "eslint-config-prettier": "^6.15.0",
     "eslint-plugin-prettier": "^3.1.4",
-    "prettier": "^2.1.2"
+    "postcss-cli": "^8.3.0",
+    "prettier": "^2.1.2",
+    "tailwindcss": "^1.9.6"
   }
 }

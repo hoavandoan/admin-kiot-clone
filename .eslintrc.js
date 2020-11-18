@@ -1,8 +1,9 @@
 module.exports = {
   extends: [
+    "eslint:recommended",
     'plugin:react/recommended',
     'plugin:react-hooks/recommended',
-    'plugin:prettier/recommended',
+    // 'plugin:prettier/recommended',
   ],
   env: {
     browser: true,
@@ -21,20 +22,21 @@ module.exports = {
     '/src/setupTests.js',
   ],
   rules: {
-    'prettier/prettier': [
-      'error',
-      {
-        printWidth: 80,
-        trailingComma: 'es5',
-        semi: false,
-        singleQuote: true,
-        'no-mixed-spaces-and-tabs': ['error', 'smart-tabs'],
-      },
-    ],
+    // 'prettier/prettier': [
+    //   'error',
+    //   {
+    //     printWidth: 100,
+    //     trailingComma: 'es5',
+    //     semi: true,
+    //     singleQuote: true,
+    //     'no-mixed-spaces-and-tabs': ['error', 'smart-tabs'],
+    //   },
+    // ],
     'no-unused-vars': [
       'error',
       { vars: 'all', args: 'after-used', ignoreRestSiblings: false },
     ],
     'react/react-in-jsx-scope': 'off',
+    "react/prop-types": [2, { ignore: ['children'] }],
   },
 }
